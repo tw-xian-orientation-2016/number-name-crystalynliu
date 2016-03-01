@@ -52,8 +52,8 @@ describe('Test the function CovertToText', function() {
   });
 
   it('Covert other five bit number', function() {
-    var result = covertToText(["002","101"],numberDictionary);
-    expect(result).toEqual(["two","one hundred and one"]);
+    var result = covertToText(["002","11"],numberDictionary);
+    expect(result).toEqual(["two","eleven"]);
   });
 
   it('Covert six bit number', function() {
