@@ -70,7 +70,7 @@ function getThreeBitString(number,numberDictionary){
 
 function addUnit(stringArray,units){
     var fullStrings = [];
-    
+
     stringArray.forEach(function(string,i){
       if(string === "" || i === 0){
           fullStrings.push(string);
@@ -81,3 +81,19 @@ function addUnit(stringArray,units){
     })
     return fullStrings;
 }
+
+function mergeStrings(fullStrings,connector){
+  var text = "";
+  for(var i = fullStrings.length-1;i >= 0;i--){
+    if(i!== fullStrings.length-1){
+      if(fullStrings[i].indexOf(" and ") !== -1){
+          text += connector.comma;
+      }else{
+          text += " "+connector.and+" ";
+      }
+    }
+    text +=fullStrings[i];
+  }
+  return text;
+}
+
