@@ -1,5 +1,5 @@
 describe('Test the function mergeStrings', function() {
-  var c = loadconnector();
+  var connector = loadConnector();
 
   it('Merge one string', function() {
     var result = mergeStrings(["one hundred and one"],connector);
