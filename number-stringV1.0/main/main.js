@@ -1,3 +1,15 @@
+function numberToString(number){
+  var numberDictionary = loadNumDictionary();
+  var units = loadUnits();
+  var connector = loadConnector();
+
+  var NumberArray = divideNumber(number);
+  var stringArray = covertToText(NumberArray,numberDictionary);
+  var fullStrings = addUnit(stringArray,units);
+
+  console.log(mergeStrings(fullStrings,connector));
+}
+
 function divideNumber(number) {
   var NumberArray = [];
 
@@ -87,7 +99,7 @@ function mergeStrings(fullStrings,connector){
   for(var i = fullStrings.length-1;i >= 0;i--){
     if(i!== fullStrings.length-1){
       if(fullStrings[i].indexOf(" and ") !== -1){
-          text += connector.comma;
+          text += connector.comma+" ";
       }else{
           text += " "+connector.and+" ";
       }

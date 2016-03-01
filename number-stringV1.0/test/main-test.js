@@ -55,7 +55,7 @@ describe('number to string', function() {
     spyOn(console, 'log');
 
     numberToString("512607");
-    var expectText ='five hundred and twelve thousand,six hundred and seven';
+    var expectText ='five hundred and twelve thousand, six hundred and seven';
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
@@ -65,7 +65,7 @@ describe('number to string', function() {
     spyOn(console, 'log');
 
     numberToString("43112603");
-    var expectText ='forty three million, one hundred and twelve thousand,six hundred and three';
+    var expectText ='forty three million, one hundred and twelve thousand, six hundred and three';
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
@@ -85,7 +85,7 @@ describe('number to string', function() {
     spyOn(console, 'log');
 
     numberToString("43010103");
-    var expectText ='forty three million and ten thousand,one hundred and three';
+    var expectText ='forty three million and ten thousand, one hundred and three';
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });

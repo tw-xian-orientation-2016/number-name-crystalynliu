@@ -8,7 +8,7 @@ describe('Test the function mergeStrings', function() {
 
   it('Merge two string', function() {
     var result = mergeStrings(["one hundred and one","twenty thousand"],connector);
-    expect(result).toEqual("twenty thousand,one hundred and one");
+    expect(result).toEqual("twenty thousand, one hundred and one");
   });
 
   it('Merge two string', function() {
@@ -23,17 +23,17 @@ describe('Test the function mergeStrings', function() {
 
   it('Merge three string', function() {
     var result = mergeStrings(["one hundred and one","two hundred and eleven thousand","twenty million"],connector);
-    expect(result).toEqual("twenty million,two hundred and eleven thousand,one hundred and one");
+    expect(result).toEqual("twenty million, two hundred and eleven thousand, one hundred and one");
   });
 
   it('Merge three string', function() {
     var result = mergeStrings(["one","two hundred and eleven thousand","twenty million"],connector);
-    expect(result).toEqual("twenty million,two hundred and eleven thousand and one");
+    expect(result).toEqual("twenty million, two hundred and eleven thousand and one");
   });
 
   it('Merge three string', function() {
     var result = mergeStrings(["one hundred and one","eleven thousand","twenty million"],connector);
-    expect(result).toEqual("twenty million and eleven thousand,one hundred and one");
+    expect(result).toEqual("twenty million and eleven thousand, one hundred and one");
   });
 
   it('Merge three string', function() {
