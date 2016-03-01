@@ -27,12 +27,12 @@ describe('Test the function divideNumber', function() {
 
   it('divide seven bit number', function() {
     var result = divideNumber("1234567");
-    expect(result).toEqual(["7","456","123"]);
+    expect(result).toEqual(["567","234","1"]);
   });
 
   it('divide ten bit number', function() {
     var result = divideNumber("1234567890");
-    expect(result).toEqual(["0","789","456","123"]);
+    expect(result).toEqual(["890","567","234","1"]);
   });
 
 });
