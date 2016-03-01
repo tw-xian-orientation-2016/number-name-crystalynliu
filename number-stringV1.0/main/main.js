@@ -67,3 +67,17 @@ function getThreeBitString(number,numberDictionary){
 
   return firstString + subString ;
 }
+
+function addUnit(stringArray,units){
+    var fullStrings = [];
+    
+    stringArray.forEach(function(string,i){
+      if(string === "" || i === 0){
+          fullStrings.push(string);
+      }else{
+          unit = units[i];
+          fullStrings.push(string + " " + unit);
+      }
+    })
+    return fullStrings;
+}
