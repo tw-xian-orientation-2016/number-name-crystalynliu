@@ -20,3 +20,10 @@ function loadNumDictionary(){
     hundred:"hundred"
   }
 }
+
+function loadConnector(){
+  return {
+    and:"and",
+    comma:","
+  }
+}
