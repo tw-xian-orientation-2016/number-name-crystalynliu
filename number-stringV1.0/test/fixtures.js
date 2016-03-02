@@ -7,7 +7,7 @@ function loadUnits() {
   ];
 }
 
-function loadNumDictionary(){
+function loadDictionary(){
   return {
     unit:[
       "zero","one","two","three","four","five","six","seven","eight","nine",

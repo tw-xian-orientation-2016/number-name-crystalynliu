@@ -1,10 +1,10 @@
 function numberToString(number){
-  var numberDictionary = loadNumDictionary();
+  var strings = loadDictionary();
   var units = loadUnits();
   var connector = loadConnector();
 
   var NumberArray = divideNumber(number);
-  var stringArray = covertToText(NumberArray,numberDictionary);
+  var stringArray = translate(NumberArray,strings);
   var fullStrings = addUnit(stringArray,units);
 
   console.log(mergeStrings(fullStrings,connector));
@@ -25,7 +25,7 @@ function divideNumber(number) {
   return NumberArray;
 }
 
-function covertToText(NumberArray,numberDictionary){
+function translate(NumberArray,numberDictionary){
   var stringArray = [];
   NumberArray.forEach(function(number){
     var subString = "";
