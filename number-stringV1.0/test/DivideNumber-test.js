@@ -1,38 +1,21 @@
-describe('Test the function divideNumber', function() {
+describe('divideNumber()', function() {
   
-  it('divide one bit number', function() {
-    var result = divideNumber("1");
-    expect(result).toEqual(["1"]);
-  });
+    it('correct result when length of string <=3', function() {
+      var inputs = ["", "1", "12", "123"];
+      var expectations = [[], ["1"], ["12"], ["123"]];
 
-  it('divide two bit number', function() {
-    var result = divideNumber("12");
-    expect(result).toEqual(["12"]);
-  });
+      inputs.forEach(function(input, index) {
+        expect(divideNumber(input)).toEqual(expectations[index]);
+      });
+    })
 
-  it('divide three bit number', function() {
-    var result = divideNumber("123");
-    expect(result).toEqual(["123"]);
-  });
+    it('correct result when length of string >3', function() {
+      var inputs = ["1234","12345","1234567","1234567890"];
+      var expectations = [["234","1"],["345","12"],["567","234","1"],["890","567","234","1"]]
 
-  it('divide four bit number', function() {
-    var result = divideNumber("1234");
-    expect(result).toEqual(["234","1"]);
-  });
-
-  it('divide five bit number', function() {
-    var result = divideNumber("12345");
-    expect(result).toEqual(["345","12"]);
-  });
-
-  it('divide seven bit number', function() {
-    var result = divideNumber("1234567");
-    expect(result).toEqual(["567","234","1"]);
-  });
-
-  it('divide ten bit number', function() {
-    var result = divideNumber("1234567890");
-    expect(result).toEqual(["890","567","234","1"]);
-  });
+      inputs.forEach(function(input,index){
+        expect(divideNumber(input)).toEqual(expectations[index]);
+      })
+    });
 
 });
