@@ -1,6 +1,16 @@
-describe('number to string', function() {
+describe('numberToString', function() {
 
-  it('should print correct text', function() {
+  it('correct text when number is 0', function() {
+
+    spyOn(console, 'log');
+
+    numberToString("0");
+    var expectText ='zero';
+
+    expect(console.log).toHaveBeenCalledWith(expectText);
+  });
+
+  it('correct text when number is 99', function() {
 
     spyOn(console, 'log');
 
@@ -10,7 +20,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 300', function() {
 
     spyOn(console, 'log');
 
@@ -20,7 +30,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 310', function() {
 
     spyOn(console, 'log');
 
@@ -30,7 +40,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 1501', function() {
 
     spyOn(console, 'log');
 
@@ -40,7 +50,17 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 1001', function() {
+
+    spyOn(console, 'log');
+
+    numberToString("1001");
+    var expectText ='one thousand and one';
+
+    expect(console.log).toHaveBeenCalledWith(expectText);
+  });
+
+  it('correct text when number is 12609', function() {
 
     spyOn(console, 'log');
 
@@ -50,7 +70,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 512607', function() {
 
     spyOn(console, 'log');
 
@@ -60,7 +80,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 43112603', function() {
 
     spyOn(console, 'log');
 
@@ -70,7 +90,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 43110003', function() {
 
     spyOn(console, 'log');
 
@@ -80,7 +100,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 43010103', function() {
 
     spyOn(console, 'log');
 
@@ -90,7 +110,7 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 43010003', function() {
 
     spyOn(console, 'log');
 
@@ -100,12 +120,21 @@ describe('number to string', function() {
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
 
-  it('should print correct text', function() {
+  it('correct text when number is 100000001', function() {
 
     spyOn(console, 'log');
 
     numberToString("100000001");
     var expectText ='one hundred million and one';
+
+    expect(console.log).toHaveBeenCalledWith(expectText);
+  });
+  it('correct text when number is 100000000', function() {
+
+    spyOn(console, 'log');
+
+    numberToString("100000000");
+    var expectText ='one hundred million';
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
