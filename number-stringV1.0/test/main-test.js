@@ -99,4 +99,14 @@ describe('number to string', function() {
 
     expect(console.log).toHaveBeenCalledWith(expectText);
   });
+
+  it('should print correct text', function() {
+
+    spyOn(console, 'log');
+
+    numberToString("100000001");
+    var expectText ='one hundred million and one';
+
+    expect(console.log).toHaveBeenCalledWith(expectText);
+  });
 });

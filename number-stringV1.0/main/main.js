@@ -100,7 +100,7 @@ function mergeStrings(fullStrings,connector){
     if(i!== fullStrings.length-1){
       if(fullStrings[i].indexOf(connector.and) !== -1){
           text += connector.comma;
-      }else{
+      }else if(fullStrings[i]!==""){
           text += connector.and;
       }
     }
