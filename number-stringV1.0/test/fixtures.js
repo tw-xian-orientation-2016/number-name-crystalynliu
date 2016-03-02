@@ -1,9 +1,9 @@
 function loadUnits() {
   return [
     "",
-    "thousand",
-    "million",
-    "billion"
+    " thousand",
+    " million",
+    " billion"
   ];
 }
 
@@ -17,13 +17,13 @@ function loadNumDictionary(){
     decade:[
       "","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"
     ],
-    hundred:"hundred"
+    hundred:" hundred"
   }
 }
 
 function loadConnector(){
   return {
-    and:"and",
-    comma:","
+    and:" and ",
+    comma:", "
   }
 }

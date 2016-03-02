@@ -70,12 +70,12 @@ function getTwoBitString(number,numberDictionary){
 function getThreeBitString(number,numberDictionary){
   var firstString = getOneBitString(number.substring(0,1),numberDictionary);
   if(firstString!==""){
-    firstString += " " + numberDictionary.hundred;
+    firstString += numberDictionary.hundred;
   }
 
   var subNumber = number.slice(-2);
   var subString = getTwoBitString(subNumber,numberDictionary);
-  subString = subString===""||firstString===""?subString:" and "+subString;
+  subString = subString===""||firstString===""?subString:loadConnector().and+subString;
 
   return firstString + subString ;
 }
@@ -88,7 +88,7 @@ function addUnit(stringArray,units){
           fullStrings.push(string);
       }else{
           unit = units[i];
-          fullStrings.push(string + " " + unit);
+          fullStrings.push(string + unit);
       }
     })
     return fullStrings;
@@ -98,10 +98,10 @@ function mergeStrings(fullStrings,connector){
   var text = "";
   for(var i = fullStrings.length-1;i >= 0;i--){
     if(i!== fullStrings.length-1){
-      if(fullStrings[i].indexOf(" and ") !== -1){
-          text += connector.comma+" ";
+      if(fullStrings[i].indexOf(connector.and) !== -1){
+          text += connector.comma;
       }else{
-          text += " "+connector.and+" ";
+          text += connector.and;
       }
     }
     text +=fullStrings[i];
