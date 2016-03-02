@@ -2,8 +2,18 @@ describe('Test the function CovertToText', function() {
   var numberDictionary = loadNumDictionary();
 
   it('Covert one bit number', function() {
+    var result = covertToText(["0"],numberDictionary);
+    expect(result).toEqual(["zero"]);
+  });
+
+  it('Covert one bit number', function() {
     var result = covertToText(["1"],numberDictionary);
     expect(result).toEqual(["one"]);
+  });
+
+  it('Covert one bit number', function() {
+    var result = covertToText(["10"],numberDictionary);
+    expect(result).toEqual(["ten"]);
   });
 
   it('Covert two bit number', function() {

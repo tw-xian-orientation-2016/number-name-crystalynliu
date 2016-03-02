@@ -51,25 +51,31 @@ function getOneBitString(number,numberDictionary){
 }
 
 function getTwoBitString(number,numberDictionary){
-  var decade = parseInt(number.charAt(0));
-  var unit = parseInt(number.charAt(1));
-
-  if(decade===0){
-    return numberDictionary.unit[unit];
-  }else if(decade===1){
-    return numberDictionary.unit[number];
+  if(number === "00"){
+    return "";
   }else{
-    var unitString = numberDictionary.unit[unit];
-    var decadeString = numberDictionary.decade[decade];
-    
-    return unitString===""?decadeString:decadeString+" "+unitString;
-    
+    var decade = parseInt(number.charAt(0));
+    var unit = parseInt(number.charAt(1));
+
+    if(decade===0){
+      return numberDictionary.unit[unit];
+    }else if(decade===1){
+      return numberDictionary.unit[number];
+    }else{
+      var unitString = numberDictionary.unit[unit];
+      var decadeString = numberDictionary.decade[decade];
+      
+      return unitString==="zero"?decadeString:decadeString+" "+unitString;
+      
+    }
   }
 }
 
 function getThreeBitString(number,numberDictionary){
-  var firstString = getOneBitString(number.substring(0,1),numberDictionary);
-  if(firstString!==""){
+  var firstString = numberDictionary.unit[number.substring(0,1)];
+  if(firstString==="zero"){
+    firstString="";
+  }else{
     firstString += numberDictionary.hundred;
   }
 
@@ -98,10 +104,12 @@ function mergeStrings(fullStrings,connector){
   var text = "";
   for(var i = fullStrings.length-1;i >= 0;i--){
     if(i!== fullStrings.length-1){
-      if(fullStrings[i].indexOf(connector.and) !== -1){
+      if(fullStrings[i]===""){
+          fullStrings[i]="";
+      }else if(fullStrings[i].indexOf(connector.and) !== -1){
           text += connector.comma;
-      }else if(fullStrings[i]!==""){
-          text += connector.and;
+      }else{
+        text += connector.and;
       }
     }
     text +=fullStrings[i];
